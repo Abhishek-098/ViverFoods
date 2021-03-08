@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/00d56d9417.js" crossorigin="anonymous"></script> 
+    <title>Login to Viver Foods</title>
+    <style>
+        body{
+            margin: 0;
+            background-image: url('../breakfast/images/idly.jpg');
+            background-position:center;
+            background-repeat: no-repeat;
+            background-size:cover;
+            background-color: black;
+        }
+        
+        
+        .sidebyside{
+            float: left;
+        }
+        
+    
+        .topnav{
+            background-color: aliceblue;
+            overflow: hidden;
+            width:100%;
+            border-radius: 10px;
+            position:fixed;
+            
+            
+          }
+        .topnav a{
+            float: left;
+            color:black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            
+            
+          }
+          .topnav a:hover{
+            background-color: black;
+            color:aliceblue;
+          }
+          .topnav a.active{
+            background-color: #54dfd8;
+            color: black;
+          }
+
+          .boxsize{
+            margin-top:70px;
+            height:90vh;
+            margin-left:25%;
+            width:50%;
+            
+            
+            background-color: rgba(0,0,0,0.7);
+        
+        }
+        .form{
+            height: 80%;
+            width: 80%;
+            -webkit-box-shadow: 0px 0px 23px 3px rgba(84,223,216,0.75);
+            -moz-box-shadow: 0px 0px 23px 3px rgba(84,223,216,0.75);
+            box-shadow: 0px 0px 23px 3px rgba(84,223,216,0.75);
+            border-radius: 5px;
+            margin: 8% 10%;
+            text-align: center;
+        }
+        .form h2{
+            padding-top: 40px;
+            font-size: 35px;
+            color: #54dfd8;
+    
+        }
+        .fab{
+            color:white ;
+            padding: 10px 20px;
+        }
+        .fab:hover{
+            color:#54dfd8;
+        }
+        input{
+            width:60%;
+            height: 40px;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            border:2px solid white ;
+            border-radius: 5px;
+            background-color: rgba(0,0,0,0.5); 
+            color:aliceblue;
+            text-align: center;
+            border-color: #54dfd8;
+            
+        }
+        input:hover{
+            width:62%;
+        }
+        
+        button{
+            margin-top: 20px;
+            width: 15%;
+            height: 35px;
+            background-color:#54dfd8;
+            color: black;
+            border-radius: 5px;
+            border-color: #54dfd8;
+            
+        }
+        button:hover{
+            width: 20%;
+            
+        }
+        h3{
+            
+            color:aliceblue;  
+            text-transform: none;     
+         
+        }
+        
+          /* Media Queries */
+          @media only screen and (max-width:600px){
+              body{
+                  background-size:auto;
+              }
+            .topnav{
+                background-color: aliceblue;
+                overflow: hidden;
+                width:100%;
+                border-radius: 5px;
+                position:fixed;
+                
+                
+              }
+            .topnav a{
+                float: left;
+                color:black;
+                text-align: center;
+                padding: 8px 8px;
+                text-decoration: none;
+                font-size: 10px;
+                font-weight: bolder;
+                
+                
+              }
+              
+              .topnav a.active{
+                background-color: #54dfd8;
+                color: black;
+              }
+              .boxsize{
+            
+                margin:30%;
+                height:auto;
+                margin-left:5%;
+                width:90%;
+                
+                
+                
+            }
+            .form{
+                height: auto;
+                width: 90%;
+                
+                margin: 10% 5%;
+               
+            }
+            .form h2{
+                margin-top: 35px;
+                font-size: 20px;
+                color: #54dfd8 ;
+        
+            }
+            .fab{
+                color:#54dfd8 ;
+                padding: 10px 10px;
+                font-size: 20px;
+            }
+            input{
+                width:90%;
+                height: 30px;
+                margin-top: 15px;
+                margin-bottom: 10px;
+                border:2px solid #54dfd8 ;
+                border-radius: 10px; 
+                color:aliceblue;
+                text-align: center;
+                
+            }
+            button{
+                margin-top: 10px;
+                width: 25%;
+                height: 25px;
+                background-color: #54dfd8;
+                color: black;
+                border:2px solid #54dfd8 ;
+                border-radius: 10px;
+                
+            }
+            .form h3{
+                color:aliceblue;  
+                font-size: 10px;
+                  
+             
+            }
+            
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="topnav sidebyside">
+        <a href="/" style="background-color:black; color:#54dfd8;">VIVER FOODS</a>
+        <a  href="/breakfast/order-breakfast">Food Menu</a>
+        <a href="/cart/your-cart" >Cart</a>
+        <a href="/help/questions">Help</a>
+        <a href="#" class="active" style="float:right;margin-right:10px;">login</a>
+    </div>
+    <div class="boxsize sidebyside">
+        <form action="login" class="form" method="post">
+
+            {% csrf_token %}
+            <h2>LOGIN</h2>
+            <!--
+            <a href="#"><i class="fab fa-facebook fa-2x" ></i></a>
+            <a href="#"><i class="fab fa-google fa-2x" ></i></a>
+            <a href="#"><i class="fab fa-twitter fa-2x" ></i></a>
+
+            -->
+            <br>
+            <input type="text" placeholder="Login ID or Email" name="username"><br>
+            <input type="password" placeholder="Password" name="password"><br>
+            <button type="submit">Login</button>
+            <h3>Not yet registered!!!<br><br><a class="signup" style="color: red; text-decoration:none;" href="/accounts/register">Register Now</a></h3><br>
+        </form>
+        
+    </div>
+    {% if messages %}
+    {% for message in messages %}
+     {% if message.tags %}  <script>alert("{{ message }}")</script> {% endif %}
+
+    {% endfor %}
+    {% endif %}
+</body>
+</html> 

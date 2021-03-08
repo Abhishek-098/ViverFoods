@@ -1,0 +1,178 @@
+{% load static %}
+{% load cart %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'cart/cart_CSS/cart.css' %}">
+    <style>
+      .cart-pay{
+        background-color: rgba(0,0,0,0.6);
+        height: 100%;
+        border-color: black;
+        margin:3% 2.5%;
+
+      }
+      .items h4{
+        color: #54dfd8;
+      }
+      .new-address input{
+        background-color:rgba(0,0,0,0.6);
+
+         color: #54dfd8;
+         border: 1px solid #54dfd8;
+        
+      }
+    </style>
+</head>
+<body>
+    <div class="topnav sidebyside">
+        <a href="/" style="background-color:black; color:#54dfd8;">VIVER FOODS</a>
+        <a  href="/breakfast/order-breakfast">Food Menu</a>
+        <a href="#" class="active">Cart</a>
+        <a href="/help/questions">Help</a>
+        {% if user.is_authenticated %}
+        <a href="/accounts/logout" style="float:right;">LogOut</a>
+        <a href="/cart/status"style='float:right;' >Your Orders</a>
+        <a href="/" style="float: right;">Hello, {{ user.first_name }}</a>
+        
+        
+
+        {% else %}
+        <a href="/accounts/register" style="float:right;">SignUp</a>
+        <a href="/accounts/login" style="float:right;">logIn</a>
+
+        {% endif %}
+    </div>
+    <div class="bground sidebyside">
+      <div class="pgname sidebyside">
+        <h2>Checkout  </h2>
+        
+        
+        
+      </div>
+      <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <form name="payments" onsubmit="return validate()" >
+            <label for="cards" >Accepted Cards</label>
+            <div class="icon-container">
+              <i class="fa fa-cc-visa" style="color:navy;"></i>
+              <i class="fa fa-cc-amex" style="color:blue;"></i>
+              <i class="fa fa-cc-mastercard" style="color:red;"></i>
+              <i class="fa fa-cc-discover" style="color:orange;"></i>
+            </div>
+            
+              <label for="cname">Name on Card</label>
+              <input type="text" id="cname" name="cardname" placeholder="Bill Gates"><br><br>
+            
+              <label for="ccnum">Credit card number</label>
+              <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444"><br><br>
+              <label for="expmonth">Exp Month</label>
+              <input type="text" id="expmonth" name="expmonth" placeholder="September"><br><br>
+              <label for="cvv">CVV</label>
+              <input type="text" id="cvv" name="cvv" placeholder="906"><br><br>
+              <label for="expyear">Exp year</label>
+              <input type="text" id="expyear" name="expyear" placeholder="2022"><br><br><br>
+              
+              <button type="submit" value="submit" class="pay">
+                Pay
+              </button>
+  
+          </form>     
+        </div>
+      
+      </div>
+      
+
+      <span class="cart-items sidebyside">
+        <div class="items">
+          <h4>CART <span class="dist"><i class="fa fa-shopping-cart"></i>&nbsp;{{products|total_cart_items:request.session.cart }}</span></h4>
+
+          {% for product in products %}
+          <form action="item-minus" method="POST" style="float: left;">
+            {% csrf_token %}
+            
+            <input hidden type="text" value="{{product.id}}" name="pId">
+            <input hidden type="text" value="True" name="remove">
+            <button style="background-color: turquoise; border:0;" type="submit">-</button>
+          </form> 
+          <form action="item-plus" method="POST" style="float: left;" >
+            {% csrf_token %}
+          <input hidden type="text" value="{{product.id}}" name="pId">
+          <button style="background-color: turquoise; border:0;">+</button>
+          </form>
+          &nbsp; &nbsp; {{product.name}}({{product|cart_qty:request.session.cart }})<span class="dist">₹{{product|price_total:request.session.cart }}</span></p>
+
+          {% endfor %}
+        
+          
+          
+          <hr>
+          <p>TOTAL<span class="dist">₹{{products|total_cart_price:request.session.cart}}</span>
+          </p>
+
+        </div>
+      </span>
+      <span class="cart-pay sidebyside" >
+        <div class="items">
+          <h4>Enter Your Address </h4>
+        </div> 
+        <div class="sidebyside form " style = 'margin-bottom:70px;'>
+          <form action="checkout" method="POST" class="new-address" style="text-align: center;">
+              {% csrf_token %}
+            <input type="text" name="house_number" placeholder="Flat, Houuse no.*, landmark">
+            <input type="text" name="city" placeholder="City">
+            <input type="text" name="phone" placeholder="Phone number">
+            <input type="text" name="pincode" placeholder="Pincode"><br><br>
+            <button type="submit"  >Go to payments section</button>
+            
+          </form>
+          
+        
+      </div>  
+      </span>
+
+
+    </div>
+    {% if messages %}
+    {% for message in messages %}
+     {% if message.tags %}  <script>alert("{{ message }}")</script> {% endif %}
+
+    {% endfor %}
+
+{% endif %}
+    <script>
+      // Get the modal
+      var modal = document.getElementById("myModal");
+      
+      // Get the button that opens the modal
+      var btn = document.getElementById("myBtn");
+      
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+      
+      // When the user clicks the button, open the modal 
+      btn.onclick = function() {
+        modal.style.display = "block";
+      }
+      
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function() {
+        modal.style.display = "none";
+      }
+      
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+      </script>
+</body>
+</html>

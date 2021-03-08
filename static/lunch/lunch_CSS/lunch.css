@@ -1,0 +1,225 @@
+body,html{
+    margin: 0;
+  }
+.sidebyside{
+            float: left;
+        }
+        
+        .topnav{
+            background-color: aliceblue;
+            overflow: hidden;
+            width:100%;
+            border-radius: 10px;
+            position:fixed;
+            
+            
+          }
+        .topnav a{
+            float: left;
+            color:black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            
+            
+          }
+          .topnav a:hover{
+            background-color: black;
+            color:aliceblue;
+          }
+          .topnav a.active{
+            background-color: #54dfd8;
+            color: black;
+          }
+        .type{
+            margin-top: 60px;
+            text-align: center;
+            width: 100%;
+
+        }
+        .boxsize{
+            
+            height: auto;
+            margin-top:10px;
+            margin-left:2.5%;
+            width:95%;
+            
+            background-color: rgb(37, 36, 36)
+        }
+        .sametag h2{
+            color: aliceblue;
+            margin-left: 5%;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        .fulllist{
+            height: auto;
+            margin-top:10px;
+            margin-left:2.5%;
+            width:95%;
+            
+            background-color: rgb(37, 36, 36)
+        }
+        .food-holder{
+            margin-left: 2.5%;
+            width:95%;
+            height:auto;
+            margin-bottom: 20px;
+            /*background-color: antiquewhite;*/
+        }
+        .pic{
+            width: 200px;
+            height:270px;
+            /*background-color: brown; */ 
+            margin: 15px 30px;
+            display: inline-block;          
+             }
+        .picture img{
+            width: 100%;
+            height: 170px;
+            -webkit-box-shadow: 0px 0px 12px 3px rgba(84,223,216,1);
+            -moz-box-shadow: 0px 0px 12px 3px rgba(84,223,216,1);
+            box-shadow: 0px 0px 12px 3px rgba(84,223,216,1);
+
+        
+        }
+        .name{
+            text-align: center;
+        }
+        .name h5{
+            color:#54dfd8;
+            font-size: 15px;
+    
+        }
+        .price{
+          text-align:center;  
+        }
+        .price h5{
+            color: aliceblue;
+        }
+        .sidenav{
+            background-color: aliceblue;
+            overflow: hidden;
+            width:45%;
+            border-radius: 10px;
+            float: right;
+          }
+          .sidenav a{
+            float: left;
+            color:black;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+            
+            
+          }
+          .sidenav a:hover{
+            background-color: black;
+            color:aliceblue;
+          }
+          .sidenav a.active{
+            background-color: #54dfd8;
+            color: black;
+          }
+          /* Mobile CSS*/
+
+        @media only screen and (max-width:600px){
+            .topnav{
+                background-color: aliceblue;
+                overflow: hidden;
+                width:100%;
+                border-radius: 5px;
+                position:fixed;
+                
+                
+              }
+            .topnav a{
+                float: left;
+                color:black;
+                text-align: center;
+                padding: 8px 8px;
+                text-decoration: none;
+                font-size: 10px;
+                font-weight: bolder;
+                
+                
+              }
+              
+              .topnav a.active{
+                background-color: #54dfd8;
+                color: black;
+              }
+              .type{
+                  margin-top: 30px;
+              }
+              .type h1{
+                  font-size: 20px;
+              }
+            
+              .sidenav{
+                background-color: aliceblue;
+                overflow: hidden;
+                width:100%
+                
+              }
+              .sidenav a{
+                float: left;
+                color:black;
+                text-align: center;
+                padding: 7px 6px;
+                text-decoration: none;
+                font-size: 7.5px;
+                font-weight: bolder;
+                
+                
+              }
+              
+              .sidenav a.active{
+                background-color: #54dfd8;
+                color: black;
+              }
+              .sametag h2{
+                  font-size: 20px;
+              }
+              .food-holder{
+                margin-left: 2.5%;
+                width:95%;
+                height:auto;
+                /*background-color: antiquewhite;*/
+            }
+            .pic{
+                width: 50px;
+                height:80px;
+                padding-top: 2%;
+                /*background-color: brown; */ 
+                margin: 7px 15px;
+                display: inline-block;          
+                 }
+            .picture img{
+                width: 100%;
+                height: 40px;
+                -webkit-box-shadow: 0px 0px 8px 2px rgba(84,223,216,1);
+                -moz-box-shadow: 0px 0px 8px 2px rgba(84,223,216,1);
+                box-shadow: 0px 0px 8px 2px rgba(84,223,216,1);
+    
+            
+            }
+            .name{
+                text-align: center;
+            }
+            .name h5{
+                color:#54dfd8;
+                font-size: 10px;
+            
+        
+            }
+            .price{
+              text-align:center;  
+            }
+            .price h5{
+                color: aliceblue;
+                font-size: 10px;
+            }
+
+          }

@@ -1,0 +1,299 @@
+body,html{
+    margin: 0;
+  }
+    .sidebyside{
+        float: left;
+    }
+    
+    .topnav{
+        background-color: aliceblue;
+        overflow: hidden;
+        width:100%;
+        border-radius: 10px;
+        position:fixed;
+        
+        
+      }
+    .topnav a{
+        float: left;
+        color:black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        font-weight:normal;
+        
+        
+      }
+      .topnav a:hover{
+        background-color: black;
+        color:aliceblue;
+      }
+      .topnav a.active{
+        background-color: #54dfd8;
+        color: black;
+      }
+      .bground{
+        height: auto;
+        width: 95%;
+        background-color: rgb(37, 36, 36);
+        margin: 70px 2.5%;
+      }
+      .pgname{
+        height: 10%;
+        width: 100%;
+        background-color: black;
+
+      }
+      .pgname h2{
+        font-family: serif;
+        color: #54dfd8;
+        margin-left: 20px;
+      }
+      .cart-items{
+        width: 30%;
+        height: auto;
+        
+        
+        margin-top: 2.5%;
+        margin-left: 2.5%;
+      }
+      .cart-pay{
+        width: 62%;
+        height: 87%;
+        
+        border:1px solid #54dfd8;
+        border-radius: 10px;
+        margin-top: 0.5%;
+        margin-left: 5%;
+        margin-bottom: 0.5%;
+      }
+      .items{
+        margin:3%;
+        
+        color:#54dfd8 ;
+      }
+      .items h4{
+        font-family: serif;
+        font-size: 20px;
+        font-weight: bolder;
+      }
+      .dist{
+        float: right;
+        
+      }
+      .items p,a{
+        font-family: serif;
+        color:aliceblue;
+        font-weight: bolder;
+        text-decoration: none;
+      }
+      .items a:hover{
+        color: #54dfd8;
+      }
+      hr{
+        color:#54dfd8;
+      }
+      .form{
+        
+        height: 85%;
+        width: 100%;
+      }
+      form{
+        margin-left:3%;
+        color: #54dfd8;
+      }
+      .icon-container {
+        margin-bottom: 20px;
+        padding: 7px 0;
+        font-size: 24px;
+      }
+      input{
+        height:30px;
+        width: 50%;
+        margin-right: 5%;
+        background-color: rgb(37, 36, 36);
+        color:aliceblue;
+        border: 1px solid #54dfd8 ;
+        float:right;
+        
+        text-align: center;
+        
+
+      }
+      .pay {
+        margin: 5% 40% ;
+        width: 10%;
+        height: 30px;
+        color: black;
+        background-color: #54dfd8;
+        border:1px solid black;
+        border-radius: 5px;
+      }
+      .address{
+        float: right;
+        width:10%;
+        height: 30px;
+        color: black;
+        background-color: #54dfd8 ;
+        margin-right: 30px;
+        border:1px solid black;
+        border-radius: 5px;
+      }
+      .modal {
+        display: none; 
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        padding-top: 100px; /* Location of the box */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+      }
+      
+      /* Modal Content */
+      .modal-content {
+        background-color: black;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid black;
+        width: 60%;
+        height: 60%;
+        text-align: center;
+        -webkit-box-shadow: 0px 0px 23px 3px rgba(84,223,216,0.75);
+        -moz-box-shadow: 0px 0px 23px 3px rgba(84,223,216,0.75);
+        box-shadow: 0px 0px 23px 3px rgba(84,223,216,0.75);
+      }
+      .new-address button{
+        background-color: #54dfd8;
+        border:1px solid #54dfd8;
+        color:black;
+        height: 30px;
+        margin-left: -40px;
+        border-radius: 5px;
+      }
+      
+      /* The Close Button */
+      .close {
+        color: #54dfd8;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+      
+      .close:hover,
+      .close:focus {
+        color: red;
+        text-decoration: none;
+        cursor: pointer;
+      }
+      .modal-content h3,h4{
+        color:white;
+        text-transform: uppercase;
+      }
+      .new-address input{
+        margin-bottom: 20px;
+        border-radius: 5px;
+        float: none;
+      }
+      
+
+
+      
+      
+      
+      
+      /* Media Queries */
+      @media only screen and (max-width:600px){
+        .topnav{
+           
+            overflow: hidden;
+            width:100%;
+            border-radius: 5px;
+            position:fixed;
+            
+            
+          }
+        .topnav a{
+            float: left;
+            color:black;
+            text-align: center;
+            padding: 8px 8px;
+            text-decoration: none;
+            font-size: 10px;
+            font-weight: bolder;
+            
+            
+          }
+          
+          .topnav a.active{
+            background-color: #54dfd8;
+            color: black;
+          }
+          .bground{
+            height: auto;
+            width: 95%;
+            background-color: rgb(37, 36, 36);
+            margin: 50px 2.5%;
+          }
+          .pgname{
+            height: 7%;
+            width: 100%;
+            background-color: black;
+
+          }
+          .pgname h2{
+            font-size: 14px;
+          }
+          .cart-items{
+            width: 95%;
+            
+            height:auto;
+          }
+          .items h4{
+            
+            font-size: 14px;
+            
+          }
+          .items p,a{
+            font-size: 12px;
+          }
+          .cart-pay{
+            margin-top: 20px;
+            width: 90%;
+            height: auto;
+            text-align:center;
+            margin-bottom: 10px;;
+            
+            
+          }
+          label{
+            display: block;
+            padding-bottom: 10px;;
+          }
+          input{
+            float: initial;
+            width: 70%;
+          }
+          .pay{
+            margin: 5% 10% ;
+            width: 20%;
+            height: 30px;
+            color: black;
+            background-color: #54dfd8;
+            border:1px solid black;
+            border-radius: 5px;
+          }
+          .address{
+            height: auto;
+            font-size: 15px;
+            padding: 2px;
+            width:40%;
+            margin-right: 20px;
+            border:1px solid black;
+            border-radius: 5px;
+          }
+      }

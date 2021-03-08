@@ -1,0 +1,111 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help@ViverFoods</title>
+    <link rel="stylesheet" href="{% static 'help/help_CSS/help.css' %}">
+</head>
+<body>
+    <div class="topnav sidebyside">
+        <a href="/" style="background-color:black; color:#54dfd8;">VIVER FOODS</a>
+        <a  href="/breakfast/order-breakfast">Food Menu</a>
+        <a href="/cart/your-cart">Cart</a>
+        <a href="#" class="active">Help</a>
+        {% if user.is_authenticated %}
+        <a href="/accounts/logout" style="float:right;">LogOut</a>
+        <a href="/" style="float: right;">Hello, {{ user.first_name }}</a>
+        
+        
+
+        {% else %}
+        <a href="/accounts/register" style="float:right;">SignUp</a>
+        <a href="/accounts/login" style="float:right;">logIn</a>
+
+        {% endif %}
+    </div>
+    <div class="faq sidebyside">
+        <h2>FAQs</h2>
+    </div>
+    
+    <div class="quest sidebyside">
+        <div class="sawal">
+            <a href="#1">1- How to order food ?</a>
+        </div>
+        
+        <div class="sawal">
+            <a href="#2">2- What if i did'nt get food after ordering ?</a>
+        </div>
+        <div class="sawal">
+            <a href="#3">3- Refund not processed after failed delivery?</a>
+        </div>
+        <div class="sawal">
+            <a href="#4">4- How to get offers on viver foods ?</a>
+        </div>
+        <div class="sawal">
+            <a href="#5">5- Why is it better then other websites ?</a>
+        </div>
+        <div class="sawal">
+            <a href="#6">6- We are not available at your Loaction  ?</a>
+        </div>
+        <div class="sawal">
+            <a href="#7">7- How to change my address ?</a>
+        </div>
+    </div>
+    <div class="faq sidebyside">
+        <h2>Replies</h2>
+    </div>
+    <div class="ans sidebyside">
+        <div class="jawab " id="1">
+            <p>1- All you need to do is just select the food you want and add it to cart for checkouts and as soon as you order it
+                our cooks at the kitchen od your location starts coooking food. And we try our best to deliver as fast as we can.
+            </p>
+            <hr style="color: aliceblue; width:90%;">
+        </div>
+        
+
+        <div class="jawab" id="2">
+            <p>2- If you did'nt get what you ordered or did'nt get any food then your refund will be made as we get a feedback complain 
+                by your side. In case you were not available at your address, then no refund will be made . 
+            </p>
+            <hr style="color: aliceblue; width:90%;">
+        </div>
+        <div class="jawab" id="3">
+            <p>3- We are very sorry for this complain , please type in another feedback complain and we assure you that we will start 
+                working on your refund immediately.
+            </p>
+            <hr style="color: aliceblue; width:90%;">
+        </div>
+        <div class="jawab" id="4">
+            <p>4- We always tries to make your day happy, in order to get offers go to the food menu and select your preferred food type and then 
+                click on offers section on  that page and there you can see related details.
+            </p>
+            <hr style="color: aliceblue; width:90%;">
+        </div>
+        <div class="jawab" id="5">
+            <p>5- We are not free to say anything about that but yes it is customers that makes it successful , if you like our product then 
+                it is better than others.
+            </p>
+            <hr style="color: aliceblue; width:90%;">
+        </div>
+        <div class="jawab" id="6">
+            <p>6- This is a fresh startup ,we are very sorry if we are not availabe at your location but we will try our best to reach at you 
+                ASAP!
+            </p>
+            <hr style="color: aliceblue; width:90%;">
+        </div>
+        <div class="jawab " id="7">
+            <p>7- You can change your address by going to the cart section and there you will find an option  which will
+                 help you changing your address .
+            </p>
+            <hr style="color: aliceblue; width:90%;">
+        </div>
+        
+        
+    </div>
+    
+    
+</body>
+</html>

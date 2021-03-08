@@ -1,0 +1,145 @@
+body,html{
+    margin: 0;
+  }
+
+
+.quest{
+    
+    height: auto;
+    margin-top:10px;
+    margin-left:5%;
+    width:90%;
+    
+    background-color: rgb(37, 36, 36)
+}
+.sawal{
+    width: 100%;
+    height: 40px;
+    font-size: 30px;
+    padding:20px;
+}
+.sawal a{
+    color: aliceblue;
+    text-decoration: none;
+}
+.sawal a:hover{
+    color: #54dfd8;
+}
+.topnav{
+    background-color: aliceblue;
+    overflow: hidden;
+    width:100%;
+    border-radius: 10px;
+    position:fixed;
+    
+    
+  }
+.topnav a{
+    float: left;
+    color:black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    
+    
+  }
+  .topnav a:hover{
+    background-color: black;
+    color:aliceblue;
+  }
+  .topnav a.active{
+    background-color: #54dfd8;
+    color: black;
+  }
+  .sidebyside{
+      float: left;
+  }
+  .faq{
+    width: 90%;
+    text-align: center;
+    margin-top: 60px;
+    margin-left: 5%;
+   
+
+  }
+  .faq h2{
+    
+      color: black;
+  }
+  .ans{
+    
+    height: auto;
+    margin-top:10px;
+    margin-left:5%;
+    width:90%;
+    
+    background-color: rgb(37, 36, 36)
+}
+.jawab{
+    width: 90%;
+    height: auto;
+    padding:20px;
+    margin-top: 30px;
+    font-size: 20px;
+}
+.jawab p{
+    color: aliceblue;
+}
+/* Mobile CSS*/
+
+@media only screen and (max-width:600px){
+    
+.topnav a{
+    float: left;
+    color:black;
+    text-align: center;
+    padding: 8px 10px;
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: bolder;
+    
+    
+  }
+  
+  .topnav a.active{
+    background-color: #54dfd8;
+    color: black;
+  }
+    .sawal{
+        width: 100%;
+        height: auto;
+        font-size: 15px;
+        padding:10px;
+    }
+    .quest{
+        overflow:scroll;
+        height: auto;
+        margin-top:5px;
+        margin-left:5%;
+        width:90%;
+        
+        background-color: rgb(37, 36, 36)
+    }
+    .ans{
+    
+        height: auto;
+        
+    }
+    .jawab{
+        width: 90%;
+        height: auto;
+        padding:10px 20px;
+        margin-top: 5px;
+        font-size: 15px;
+    }
+    .faq h2{
+        font-size: 20px;
+    }
+    .faq{
+        width: 90%;
+        text-align: center;
+        margin-top: 30px;
+    
+}
+}

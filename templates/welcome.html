@@ -1,0 +1,134 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Viver Foods</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Allerta+Stencil">
+    <link href='https://fonts.googleapis.com/css?family=Advent Pro' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css?family=Give You Glory' rel='stylesheet'>
+    <link rel="stylesheet" href="{% static 'index/index_CSS/index.css' %}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+</head>
+<body>
+                      <!-- This is Top navigation bar -->
+    <div class="topnav">
+        <a href="/" style="background-color:black; color:#54dfd8;">VIVER FOODS</a>
+        <a href="#menu">Food Menu</a>
+        <a href="cart/your-cart">Cart</a>
+        <a href="help/questions">Help</a>
+        {% if user.is_authenticated %}
+      
+        <a href="/" style="float: right;">Hello, {{ user.first_name }}</a>
+        
+        <a href="accounts/logout" style="float:right;">LogOut</a>
+
+        {% else %}
+        <a href="accounts/register" style="float:right;">SignUp</a>
+        <a href="accounts/login" style="float:right;">logIn</a>
+
+        {% endif %}
+    </div>
+
+                      <!--This is First SEction i.e., Name Of Comapny-->
+      
+                     
+
+      <div class="F-img">
+        <div class="name">
+        <h1>VIBER FOODS</h1>
+        <p class="ml15"><span class="word">Order&nbsp;</span><span class="word">Eat&nbsp;</span><span class="word">Repeat</span></p>
+        </div>
+      </div>
+
+                      <!--Second Section (Quote) -->
+
+      <div class="sec2">
+          <p>“One cannot think well, love well, sleep well, if one has not dined well.” <br><br>
+            ― Virginia Woolf, A Room of One's Own </p>
+      </div>
+
+                      <!--Third Section (Image) and another Quote    -->
+                      
+      <div class="S-img"></div>
+      <div class="sec2">
+        <p>“Seize the moment. Remember all those women on the 'Titanic' who waved off the dessert cart.” <br><br>
+          ― Erma Bombeck  </p>
+      </div>
+
+                      <!--Fourth Section (Food Menu) -->
+
+      <div class="T-img">
+        <div class="categories" id="menu">
+          <div class="cat-items-box">
+            <div class="cat-holder" >
+              <div class="boxes">
+                <img class="cat-items" src="{% static 'index/images/breakfast.jpg' %}" alt="breakfast">
+                <a href="breakfast/order-breakfast"><button class="btn">Breakfast</button></a>
+              </div>
+              <div class="boxes">
+                <img class="cat-items" src="{% static 'index/images/lunch.jpg' %}" alt="lunch">
+              <a href="lunch/order-lunch"> <button class="btn">Lunch</button></a>
+              </div>
+              <div class="boxes">
+                <img class="cat-items" src="{% static 'index/images/dinner.jpg' %}" alt="dinner">
+                <a href="dinner/order-dinner"><button class="btn">Dinner</button></a>
+              </div>
+              <div class="boxes">
+                <img class="cat-items" src="{% static 'index/images/special_thali.jpg' %}" alt="meal">
+                <a href="thali/orderthali"><button class="btn">Thali</button></a>
+              </div>
+              <div class="boxes">
+                <img class="cat-items" src="{% static 'index/images/ice_cream.jpg' %}" alt="icecream">
+                <a href="snacks/order-snacks"><button class="btn">Snacks</button></a>
+              </div>
+              <div class="boxes">
+                <img class="cat-items" src="{% static 'index/images/coke.jpg' %}" alt="coke">
+                <a href="desserts/orderdesserts"><button class="btn">Desserts</button></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+                         <!--Fifth Section (Donation) -->
+      <div class="sec2" >
+        <p>― Our initiative <br><br> We are also donating to needy people.</p>
+        <a hidden href="../breakfast/people/donate.html"><button class="help">Know more</button></a>
+      </div>
+      <div class="abt"></div>
+      <div class="p-img"></div>
+      <div class="sec2">
+            <p>“Cakes are healthy too, you just eat a small slice.” <br><br>
+              ― Mary Berry </p>
+      </div>
+
+                        <!--Last Section (Footer) -->
+
+      <div class="footer">
+        <span class="foot-text">
+          <h1>About</h1>
+          <p>Viver foods is a  college project and the creator of this projects are Abhishek Chauhan, Ayushman Singh and Prabal Astana.
+            The project is being prepared During the pandemic situation (COVID-19). If you order something there are  zero chances that 
+            you are going to get it ,No such company exits.</p>
+        </span>
+        <span class="logo">
+          <img src="{% static 'index/images/logo.png' %}" alt="">
+        </span>
+       </div>  
+       <script>
+        anime.timeline({loop: 1})
+        .add({
+          targets: '.ml15 .word',
+          scale: [5,1],
+          opacity: [0,1],
+          easing: "easeOutCirc",
+          duration: 1000,
+          delay: (el, i) => 800 * i
+        })
+       </script>
+</body>
+
+</html>
